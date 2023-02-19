@@ -11,10 +11,10 @@ function saveDataOnInput() {
 }
 
 function checkOnForm() {
-  if (localStorage) {
-    const localStorageData = JSON.parse(
-      localStorage.getItem('feedback-form-state')
-    );
+  const localStorageData = JSON.parse(
+    localStorage.getItem('feedback-form-state')
+  );
+  if (localStorageData) {
     feedbackForm.email.value = localStorageData.email;
     feedbackForm.message.value = localStorageData.message;
   }
