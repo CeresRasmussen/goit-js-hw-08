@@ -7,15 +7,15 @@ const gallery = document.querySelector('.gallery');
 const galleryList = galleryItems.reduce(
   (prew, next) =>
     prew +
-    `<li><a class="gallery__item" href="${next.original}">
+    `<ul><li><a class="gallery__item" href="${next.original}">
   <img class="gallery__image" src="${next.preview}" alt="${next.description}" />
-</a></li>`,
+</a></li></ul>`,
   ''
 );
 
 gallery.insertAdjacentHTML('afterbegin', galleryList);
 
-var lightBox = new SimpleLightbox('.gallery li .gallery__item', {
+var lightBox = new SimpleLightbox('.gallery .gallery__item', {
   captionsData: 'alt',
   captionDelay: 250,
   scrollZoom: false,
